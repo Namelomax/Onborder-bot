@@ -24,7 +24,7 @@ Telegram-бот для автоматизации онбординга (адап
 | Подсистема (ТЗ)        | Модуль              | Технология                          |
 |------------------------|---------------------|-------------------------------------|
 | Telegram-интерфейс     | `bot.py`            | aiogram (Telegram Bot API)          |
-| ИИ-ассистент           | `ai_agent.py`       | OpenRouter (`openrouter/owl-alpha`) |
+| ИИ-ассистент           | `ai_agent.py`       | LM Studio (`Qwen3.5:9b`) |
 | База знаний            | `knowledge_base.py` | Markdown-файлы + лексический поиск   |
 | Хранение данных        | `database.py`       | SQLite                              |
 
@@ -33,7 +33,7 @@ Telegram-бот для автоматизации онбординга (адап
 > Agent SDK. В настоящем учебном демонстрационном варианте те же функции
 > реализованы на более лёгком стеке: ИИ-ассистент построен как агент (системная
 > инструкция + поиск по базе знаний + история диалога) на модели
-> `openrouter/owl-alpha` через OpenRouter, а хранилище — на встраиваемой СУБД
+> `Qwen3.5:9b` через LM Studio, а хранилище — на встраиваемой СУБД
 > SurrealDB.
 
 ## Структура проекта
@@ -72,11 +72,6 @@ cp .env.example .env
 
 - `BOT_TOKEN` — токен бота от [@BotFather](https://t.me/BotFather).
   Это **единственное**, что нужно для Telegram — api_id/api_hash не требуются.
-- `OPENROUTER_API_KEY` — ключ с [openrouter.ai](https://openrouter.ai/keys).
-- `OPENROUTER_MODEL` — по умолчанию `openrouter/owl-alpha`.
-- `TELEGRAM_PROXY` — *необязательно*. Если Telegram заблокирован в вашей сети,
-  укажите прокси, например `socks5://user:pass@host:port`. Оставьте пустым, если
-  прокси не нужен.
 
 ### 3. Запуск
 
