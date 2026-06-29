@@ -1,0 +1,22 @@
+# Секреты — НИКОГДА не коммитить
+.env
+
+# Telethon-сессии (содержат авторизацию)
+*.session
+*.session-journal
+
+# База данных
+*.db
+*.db-journal
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# IDE / ОС
+.idea/
+.vscode/
+.DS_Store
